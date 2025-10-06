@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #3f51b5; /* Biru Ungu Utama */
+    --secondary-color: #ff4081; /* Pink Aksentuasi */
+    --text-light: #f4f4f4; /* Teks Terang */
+    --text-dark: #2c3e50; /* Teks Gelap */
+    --card-bg: rgba(255, 255, 255, 0.1); /* Latar Belakang Card Transparan */
+    --bg-gradient: linear-gradient(135deg, #1f0842 0%, #17002e 100%); /* Gradien Gelap Estetik */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    /* Background Menarik dan Cocok untuk HP */
+    background: var(--bg-gradient);
+    background-attachment: fixed; /* Membuat background tetap saat digulir */
+}
+
+/* Container untuk Responsif */
+.container {
+    width: 90%; /* Lebar 90% dari layar */
+    max-width: 1200px; /* Batasan lebar maksimal */
+    margin: 0 auto; /* Tengah di layar */
+    padding: 20px 0;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparan agar background terlihat */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e91e63; /* Warna pink lebih gelap saat hover */
+}
+
+/* Section Card (Materi) */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+}
+
+.materi-grid {
+    display: flex;
+    flex-direction: column; /* Tumpuk ke bawah di HP (default) */
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.materi-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid var(--primary-color);
+    backdrop-filter: blur(5px); /* Efek blur untuk card */
+}
+
+.materi-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+/* Jadwal Section */
+.schedule-section {
+    padding: 20px 0 60px 0;
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 0;
+}
+
+.schedule-list li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    border-top: 1px solid var(--primary-color);
+}
+
+
+/* Media Queries untuk Desain Tablet/Desktop (Membuat Responsif) */
+@media (min-width: 768px) {
+    /* Penyesuaian Navigasi */
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    /* Penyesuaian Hero */
+    .hero-section {
+        padding: 80px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 3em;
+    }
+
+    /* Penyesuaian Grid Materi */
+    .materi-grid {
+        flex-direction: row; /* Ubah menjadi baris di layar lebih lebar */
+        justify-content: space-between;
+    }
+    
+    .materi-card {
+        flex: 1; /* Distribusi lebar yang sama */
+    }
+}
